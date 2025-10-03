@@ -1,9 +1,7 @@
 Eric Gutierrez
 Lab 3
 
-I made a Weather & News Dashboard web application built with HTML, CSS, JavaScript, and AJAX. 
-This fetches live weather data using the OpenWeatherMap API, and displays the user’s current location weather via the HTML5 Geolocation API.
-Also fetches top U.S. news headlines from the News API.
+I made a Weather & News Dashboard web application built with HTML, CSS, JavaScript, and AJAX. This fetches live weather data using the OpenWeatherMap API, and displays the user’s current location weather via the HTML5 Geolocation API. Also fetches top U.S. news headlines from the News API.
 
 -----------------------
 Features:
