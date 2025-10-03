@@ -1,0 +1,107 @@
+/* Dark mode background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+/* Title */
+.app-title {
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+}
+
+/* Weather Card */
+.weather-card {
+  border-radius: 20px;
+  background: linear-gradient(160deg, #1a2a3a, #16222a);
+  color: #f1f1f1;
+  padding: 30px;
+  border: 1px solid rgba(0,255,255,0.2);
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+.weather-header h2 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #00e5ff;
+}
+
+.weather-header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #bbb;
+}
+
+.weather-icon {
+  width: 140px;
+  height: 140px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9)) 
+          drop-shadow(0 0 12px rgba(0, 229, 255, 0.6));
+  margin-bottom: 15px;
+}
+
+.weather-body h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 15px 0;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0,255,255,0.7);
+}
+
+.weather-body p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #bbb;
+}
+
+/* News Card */
+.news-card {
+  border-radius: 20px;
+  background: linear-gradient(160deg, #141e30, #243b55);
+  padding: 25px;
+  color: #f1f1f1;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+.news-card h3 {
+  font-weight: 700;
+  color: #ff9800;
+}
+
+#other-api ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#other-api li {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#other-api li:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateX(5px);
+}
+
+#other-api a {
+  font-weight: 600;
+  color: #00e5ff;
+  text-decoration: none;
+}
+
+#other-api a:hover {
+  text-decoration: underline;
+  color: #1de9b6;
+}
+
+/* Footer */
+.footer-text {
+  color: #aaa;
+}
