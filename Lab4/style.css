@@ -1,0 +1,85 @@
+body {
+    background-color: #f0f2f5; /* Light gray background */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #1c1e21;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #ffffff; /* White card background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#weather-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Added gap for better spacing */
+}
+
+#weather-card h2 {
+    margin-top: 0;
+}
+
+/* NEW: Container for weather text to group it together */
+#weather-content {
+    text-align: center;
+}
+
+/* NEW: Styles for the main temperature number */
+#temperature {
+    font-size: 3.5em;      /* Make the number large */
+    font-weight: 500;
+    color: #1c1e21;
+    margin: 0;
+    line-height: 1;        /* Tighten line spacing */
+}
+
+/* NEW: Styles for the weather description */
+#description {
+    text-transform: capitalize; /* Makes "broken clouds" look like "Broken Clouds" */
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* NEW: Set a consistent size for the weather icon */
+#weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+#random-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+#extra-card {
+    text-align: center;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}

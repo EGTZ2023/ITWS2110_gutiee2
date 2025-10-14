@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="dashboard-grid">
+        <section class="card weather-card">
+            <div class="weather-info">
+                <h2 id="city">Loading location...</h2>
+                <p id="desc"></p>
+                <h1 id="temp"></h1>
+                <p id="details"></p>
+            </div>
+            <div class="weather-icon">
+                <img id="icon" src="" alt="Weather condition icon">
+            </div>
+        </section>
+
+        <section class="card extra-card">
+            <h2>Random Cat of the Day</h2>
+            <img id="random-image" src="" alt="A random cat loading...">
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
