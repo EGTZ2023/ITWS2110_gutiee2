@@ -12,4 +12,4 @@ $_GET would pass the input through the URL, for example: lab6.php?x=5&y=3&add=Ad
 
 3) Is there a better way to determine which button was pressed?
 
-Yes. Instead of multiple button names, all buttons could share the same name (e.g., "operation") with different values ("add", "subtract", etc.). Then, PHP can read $_POST["operation"] directly and use a switch statement or mapping to instantiate the correct class. This approach is cleaner and scales better with more operations.
+Yes, instead of multiple button names, all buttons could share the same name (ex: "operation") with different values ("add", "subtract", etc.). Then, PHP can read $_POST["operation"] directly and use a switch statement or mapping to instantiate the correct class. This approach is cleaner and scales better with more operations.
