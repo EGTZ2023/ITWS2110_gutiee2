@@ -1,0 +1,161 @@
+Part 1
+----------------------------------------
+
+1. Create Database: websyslab8
+SQL Command:
+CREATE DATABASE websyslab8
+    DEFAULT CHARACTER SET utf8
+    COLLATE utf8_unicode_ci;
+
+----------------------------------------
+
+2. Select the database
+SQL Command:
+USE websyslab8;
+
+----------------------------------------
+
+3. Create courses table
+SQL Command:
+CREATE TABLE courses (
+    crn INT(11) PRIMARY KEY,
+    prefix VARCHAR(4) NOT NULL,
+    number SMALLINT(4) NOT NULL,
+    title VARCHAR(255) NOT NULL
+) COLLATE=utf8_unicode_ci;
+
+----------------------------------------
+
+4. Create students table
+SQL Command:
+CREATE TABLE students (
+    rin INT(9) PRIMARY KEY,
+    rcsID CHAR(7),
+    firstname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    alias VARCHAR(100) NOT NULL,
+    phone INT(10)
+) COLLATE=utf8_unicode_ci;
+
+----------------------------------------
+Part 2
+----------------------------------------
+
+5. Add address fields to students
+SQL Command:
+ALTER TABLE students
+ADD street VARCHAR(255),
+ADD city VARCHAR(100),
+ADD state CHAR(2),
+ADD zip CHAR(5);
+
+----------------------------------------
+
+6. Add section + year to courses
+SQL Command:
+ALTER TABLE courses
+ADD section VARCHAR(10),
+ADD year YEAR;
+
+----------------------------------------
+
+7. Create grades table
+SQL Command:
+CREATE TABLE grades (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    crn INT,
+    rin INT,
+    grade INT(3) NOT NULL,
+    FOREIGN KEY (crn) REFERENCES courses(crn),
+    FOREIGN KEY (rin) REFERENCES students(rin)
+);
+
+----------------------------------------
+
+8. Insert courses
+SQL Command:
+INSERT INTO courses (crn, prefix, number, title, section, year)
+VALUES
+(12345, 'ITWS', 1100, 'Intro to ITWS', '01', 2025),
+(23456, 'CSCI', 1200, 'Data Structures', '02', 2025),
+(34567, 'ECON', 1200, 'Intro to Economics', '01', 2025),
+(45678, 'ITWS', 2110, 'Web Systems', '01', 2025);
+
+----------------------------------------
+
+9. Insert students
+SQL Command:
+INSERT INTO students (rin, rcsID, firstname, lastname, alias, phone, street, city, state, zip)
+VALUES
+(661234567, 'gutiee2', 'Eric', 'Gutierrez', 'Eag', 2013963411, '123 College Ave', 'Troy', 'NY', '12180'),
+(661234568, 'smithj', 'John', 'Smith', 'Smitty', 5182223333, '44 River St', 'Troy', 'NY', '12180'),
+(661234569, 'doej', 'Jane', 'Doe', 'JD', 5183334444, '11 8th St', 'Troy', 'NY', '12180'),
+(661234570, 'brownm', 'Mike', 'Brown', 'Mikey', 5184445555, '77 Hoosick St', 'Troy', 'NY', '12180');
+
+----------------------------------------
+
+10. Insert grades
+SQL Command:
+INSERT INTO grades (crn, rin, grade)
+VALUES
+(12345, 661234567, 95),
+(23456, 661234567, 88),
+(34567, 661234567, 92),
+(45678, 661234567, 85),
+(12345, 661234568, 78),
+(34567, 661234568, 90),
+(23456, 661234569, 93),
+(45678, 661234569, 97),
+(12345, 661234570, 89),
+(34567, 661234570, 91);
+
+----------------------------------------
+
+11. List students (RIN order)
+SQL Command:
+SELECT * FROM students ORDER BY rin;
+
+----------------------------------------
+
+12. List students (last name order)
+SQL Command:
+SELECT * FROM students ORDER BY lastname;
+
+----------------------------------------
+
+13. List students (RCSID order)
+SQL Command:
+SELECT * FROM students ORDER BY rcsID;
+
+----------------------------------------
+
+14. List students (first name order)
+SQL Command:
+SELECT * FROM students ORDER BY firstname;
+
+----------------------------------------
+
+15. Students with grade > 90
+SQL Command:
+SELECT s.rin, s.firstname, s.lastname, s.street, s.city, s.state, s.zip
+FROM students s
+JOIN grades g ON s.rin = g.rin
+WHERE g.grade > 90;
+
+----------------------------------------
+
+16. Average grade per course
+SQL Command:
+SELECT c.crn, c.prefix, c.number, AVG(g.grade) AS avg_grade
+FROM courses c
+JOIN grades g ON c.crn = g.crn
+GROUP BY c.crn;
+
+----------------------------------------
+
+17. Number of students in each course
+SQL Command:
+SELECT c.crn, c.prefix, c.number, COUNT(g.rin) AS num_students
+FROM courses c
+JOIN grades g ON c.crn = g.crn
+GROUP BY c.crn;
